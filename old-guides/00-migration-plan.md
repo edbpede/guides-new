@@ -1,11 +1,13 @@
 # Migration Plan: Gitbook to Astro Starlight
 
 ## Overview
+
 This document outlines the step-by-step process for migrating content from Gitbook's markdown format to Astro Starlight's MDX format, ensuring proper organization, metadata handling, and feature parity.
 
 ## Migration Checklist
 
 ### 1. Content Inventory and Structure
+
 - [x] Create an inventory of all content in old-guides directory
 - [x] Map the current Gitbook structure (from SUMMARY.md) to Starlight's folder structure
 - [x] Design the new navigation structure in Starlight format
@@ -15,27 +17,34 @@ This document outlines the step-by-step process for migrating content from Gitbo
 **See [content-inventory.md](./content-inventory.md) for the detailed content inventory, navigation structure, directory plan, and URL slug strategy.**
 
 ### 2. Content Preparation
-- [ ] Identify Gitbook-specific syntax and features used in current documentation
-- [ ] Create conversion rules for:
-  - [ ] Callouts/admonitions (info, warning, danger boxes)
-  - [ ] Code blocks and syntax highlighting
-  - [ ] Tables
-  - [ ] Images and other assets
-  - [ ] Internal links
-  - [ ] External links
-- [ ] Define standard frontmatter fields for Starlight pages
+
+- [x] Identify Gitbook-specific syntax and features used in current documentation
+- [x] Create conversion rules for:
+  - [x] Callouts/admonitions (info, warning, danger boxes)
+  - [x] Code blocks and syntax highlighting
+  - [x] Tables
+  - [x] Images and other assets
+  - [x] Internal links
+  - [x] External links
+- [x] Define standard frontmatter fields for Starlight pages
+
+**See [conversion-rules.md](./conversion-rules.md) for detailed conversion guidelines, including syntax transformation rules and frontmatter standards.**
 
 ### 3. Frontmatter and Metadata
-- [ ] Create template for standard frontmatter in MDX files
-- [ ] Define and document:
-  - [ ] title
-  - [ ] description
-  - [ ] sidebar positioning
-  - [ ] tags/categories
-  - [ ] last updated information
-  - [ ] author information (if needed)
+
+- [x] Create template for standard frontmatter in MDX files
+- [x] Define and document:
+  - [x] title
+  - [x] description
+  - [x] sidebar positioning
+  - [x] tags/categories
+  - [x] last updated information
+  - [x] author information (if needed)
+
+**See [frontmatter-guide.md](./03-frontmatter-guide.md) for detailed documentation on frontmatter fields, templates, and examples.**
 
 ### 4. MD to MDX Conversion Process
+
 - [ ] Set up a conversion pipeline or manual process
 - [ ] For each source file:
   - [ ] Rename from .md to .mdx
@@ -47,6 +56,7 @@ This document outlines the step-by-step process for migrating content from Gitbo
   - [ ] Add any JSX components as needed
 
 ### 5. Starlight-Specific Enhancements
+
 - [ ] Implement Starlight navigation configuration in astro.config.mjs
 - [ ] Configure sidebar structure according to design
 - [ ] Set up custom components for specific content types
@@ -55,6 +65,7 @@ This document outlines the step-by-step process for migrating content from Gitbo
 - [ ] Set up content collections schema (if using TypeScript)
 
 ### 6. Assets Migration
+
 - [ ] Inventory all images, PDFs, and other assets
 - [ ] Create organized assets directory structure
 - [ ] Move and rename assets as needed
@@ -62,6 +73,7 @@ This document outlines the step-by-step process for migrating content from Gitbo
 - [ ] Optimize images for web performance
 
 ### 7. Custom Components
+
 - [ ] Identify repetitive content patterns that could benefit from components
 - [ ] Create reusable components for:
   - [ ] Custom callouts/admonitions
@@ -71,6 +83,7 @@ This document outlines the step-by-step process for migrating content from Gitbo
 - [ ] Document how to use these components in MDX
 
 ### 8. Quality Assurance
+
 - [ ] Create QA checklist for each migrated document
 - [ ] Verify all links (internal and external) work correctly
 - [ ] Check rendering of all special elements (code, tables, images)
@@ -79,12 +92,14 @@ This document outlines the step-by-step process for migrating content from Gitbo
 - [ ] Cross-browser and mobile testing
 
 ### 9. Progressive Migration Strategy
+
 - [ ] Determine migration order (by section or importance)
 - [ ] Set up redirect strategy for old URLs (if applicable)
 - [ ] Define content freeze period during migration (if needed)
 - [ ] Create testing milestones after each section migration
 
 ### 10. Documentation and Training
+
 - [ ] Document new content authoring workflow
 - [ ] Create style guide for MDX content
 - [ ] Document component usage for content authors
@@ -92,12 +107,14 @@ This document outlines the step-by-step process for migrating content from Gitbo
 - [ ] Provide examples of complex patterns in MDX
 
 ### 11. Tailwind CSS Integration
+
 - [ ] Ensure all styles properly use Tailwind classes
 - [ ] Set up custom Tailwind configuration if needed
 - [ ] Create utility classes for commonly used styling patterns
 - [ ] Document styling guidelines for content authors
 
 ### 12. Post-Migration Tasks
+
 - [ ] Implement redirects from old URLs if needed
 - [ ] Set up analytics
 - [ ] Create content maintenance schedule
@@ -106,6 +123,7 @@ This document outlines the step-by-step process for migrating content from Gitbo
 ## Implementation Notes
 
 ### Starlight Frontmatter Example
+
 ```yaml
 ---
 title: Guide Title
@@ -119,6 +137,7 @@ lastUpdated: true
 ```
 
 ### Folder Structure Example
+
 ```
 src/content/docs/
 ├── index.mdx                  # Home page
@@ -137,25 +156,31 @@ src/content/docs/
 ```
 
 ### Internal Linking Pattern
+
 From:
+
 ```md
 [Link text](path/to/page.md)
 ```
 
 To:
+
 ```mdx
 <a href="/path/to/page/">Link text</a>
 ```
+
 Or:
+
 ```mdx
 [Link text](/path/to/page/)
 ```
 
 ### Common Transformations
-| Gitbook Element | Starlight/MDX Equivalent |
-|-----------------|--------------------------|
-| Info box        | `<Note>Content</Note>` |
+
+| Gitbook Element | Starlight/MDX Equivalent            |
+| --------------- | ----------------------------------- |
+| Info box        | `<Note>Content</Note>`              |
 | Warning box     | `<Tip type="caution">Content</Tip>` |
-| Danger box      | `<Tip type="danger">Content</Tip>` |
-| Code tabs       | Custom component |
-| Embedded media  | JSX components |
+| Danger box      | `<Tip type="danger">Content</Tip>`  |
+| Code tabs       | Custom component                    |
+| Embedded media  | JSX components                      |
