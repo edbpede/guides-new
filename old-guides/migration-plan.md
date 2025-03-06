@@ -6,11 +6,13 @@ This document outlines the step-by-step process for migrating content from Gitbo
 ## Migration Checklist
 
 ### 1. Content Inventory and Structure
-- [ ] Create an inventory of all content in old-guides directory
-- [ ] Map the current Gitbook structure (from SUMMARY.md) to Starlight's folder structure
-- [ ] Design the new navigation structure in Starlight format
-- [ ] Create a directory structure plan for /src/content/docs/
-- [ ] Decide on URL slugs and permalink strategy
+- [x] Create an inventory of all content in old-guides directory
+- [x] Map the current Gitbook structure (from SUMMARY.md) to Starlight's folder structure
+- [x] Design the new navigation structure in Starlight format
+- [x] Create a directory structure plan for /src/content/docs/
+- [x] Decide on URL slugs and permalink strategy
+
+**See [content-inventory.md](./content-inventory.md) for the detailed content inventory, navigation structure, directory plan, and URL slug strategy.**
 
 ### 2. Content Preparation
 - [ ] Identify Gitbook-specific syntax and features used in current documentation
