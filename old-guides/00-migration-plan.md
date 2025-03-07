@@ -45,15 +45,17 @@ This document outlines the step-by-step process for migrating content from Gitbo
 
 ### 4. MD to MDX Conversion Process
 
-- [ ] Set up a conversion pipeline or manual process
-- [ ] For each source file:
-  - [ ] Rename from .md to .mdx
-  - [ ] Add proper frontmatter
-  - [ ] Convert Gitbook-specific syntax to MDX/Starlight equivalents
-  - [ ] Update internal links to new URL structure
-  - [ ] Optimize images and update paths
-  - [ ] Test code blocks and syntax highlighting
-  - [ ] Add any JSX components as needed
+- [x] Set up a conversion pipeline or manual process
+- [x] For each source file:
+  - [x] Rename from .md to .mdx
+  - [x] Add proper frontmatter
+  - [x] Convert Gitbook-specific syntax to MDX/Starlight equivalents
+  - [x] Update internal links to new URL structure
+  - [x] Optimize images and update paths
+  - [x] Test code blocks and syntax highlighting
+  - [x] Add any JSX components as needed
+
+**See [mdx-conversion-process.md](./04-mdx-conversion-process.md) for detailed documentation on the conversion process.**
 
 ### 5. Starlight-Specific Enhancements
 
