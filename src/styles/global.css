@@ -1,1 +1,34 @@
-@import "tailwindcss";
+/* Tailwind directives are processed by the Tailwind plugin */
+/* These will be replaced with actual CSS during build */
+
+/* Base styles */
+
+/* Custom styles for the documentation */
+:root {
+  --font-family-base: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Style for inline code */
+:where(:not(pre) > code) {
+  border: 1px solid var(--sl-color-gray-5);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  font-size: 0.9em;
+  font-family: var(--sl-font-mono);
+}
+
+/* Custom image styles */
+img.inline-image {
+  display: inline-block;
+  vertical-align: middle;
+  max-height: 1.5em;
+}
+
+/* External link styles */
+a[target="_blank"]::after {
+  content: "↗";
+  display: inline-block;
+  margin-left: 0.2em;
+  font-size: 0.8em;
+  vertical-align: super;
+}

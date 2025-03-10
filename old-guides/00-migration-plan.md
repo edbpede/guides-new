@@ -59,20 +59,22 @@ This document outlines the step-by-step process for migrating content from Gitbo
 
 ### 5. Starlight-Specific Enhancements
 
-- [ ] Implement Starlight navigation configuration in astro.config.mjs
-- [ ] Configure sidebar structure according to design
-- [ ] Set up custom components for specific content types
-- [ ] Implement language/internationalization if needed
-- [ ] Add search functionality configuration
-- [ ] Set up content collections schema (if using TypeScript)
+- [x] Implement Starlight navigation configuration in astro.config.mjs
+- [x] Configure sidebar structure according to design
+- [x] Set up custom components for specific content types
+- [x] Implement language/internationalization if needed
+- [x] Add search functionality configuration
+- [x] Set up content collections schema (if using TypeScript)
 
 ### 6. Assets Migration
 
-- [ ] Inventory all images, PDFs, and other assets
-- [ ] Create organized assets directory structure
-- [ ] Move and rename assets as needed
-- [ ] Update all references to assets in MDX files
-- [ ] Optimize images for web performance
+- [x] Inventory all images, PDFs, and other assets
+- [x] Create organized assets directory structure
+- [x] Move and rename assets as needed
+- [x] Update all references to assets in MDX files
+- [x] Optimize images for web performance
+
+**See [assets-migration.md](./06-assets-migration.md) for detailed documentation on the assets migration process and organization.**
 
 ### 7. Custom Components
 

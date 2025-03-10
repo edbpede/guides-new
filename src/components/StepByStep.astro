@@ -1,0 +1,63 @@
+---
+interface Props {
+  title?: string;
+}
+
+const { title } = Astro.props;
+---
+
+<div class="step-by-step">
+  {title && <h3 class="step-title">{title}</h3>}
+  <ol class="steps-list">
+    <slot />
+  </ol>
+</div>
+
+<style>
+  .step-by-step {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background-color: var(--sl-color-gray-1);
+    border-radius: 0.5rem;
+  }
+
+  .step-title {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: var(--sl-color-text);
+  }
+
+  .steps-list {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: step-counter;
+  }
+
+  /* The ::slotted selector will style elements that are slotted */
+  :global(.steps-list li) {
+    position: relative;
+    margin-bottom: 1.5rem;
+    padding-left: 0.5rem;
+    counter-increment: step-counter;
+  }
+
+  :global(.steps-list li::before) {
+    content: counter(step-counter);
+    position: absolute;
+    left: -2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: var(--sl-color-accent);
+    border-radius: 50%;
+    color: white;
+    font-weight: bold;
+  }
+
+  :global(.steps-list li:last-child) {
+    margin-bottom: 0;
+  }
+</style>

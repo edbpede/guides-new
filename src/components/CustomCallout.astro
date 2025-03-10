@@ -1,0 +1,76 @@
+---
+interface Props {
+  type?: 'info' | 'warning' | 'danger' | 'success';
+  title?: string;
+}
+
+const { type = 'info', title } = Astro.props;
+
+const icons = {
+  info: '💡',
+  warning: '⚠️',
+  danger: '🛑',
+  success: '✅'
+};
+
+const backgrounds = {
+  info: 'var(--sl-color-blue-low)',
+  warning: 'var(--sl-color-yellow-low)',
+  danger: 'var(--sl-color-red-low)',
+  success: 'var(--sl-color-green-low)'
+};
+
+const borders = {
+  info: 'var(--sl-color-blue)',
+  warning: 'var(--sl-color-yellow)',
+  danger: 'var(--sl-color-red)',
+  success: 'var(--sl-color-green)'
+};
+---
+
+<div class="custom-callout" data-type={type}>
+  <div class="callout-header">
+    <span class="icon">{icons[type]}</span>
+    {title && <span class="title">{title}</span>}
+  </div>
+  <div class="content">
+    <slot />
+  </div>
+</div>
+
+<style define:vars={{ background: backgrounds[type], border: borders[type] }}>
+  .custom-callout {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border-left: 4px solid var(--border);
+    background-color: var(--background);
+  }
+
+  .callout-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+  }
+
+  .icon {
+    margin-right: 0.5rem;
+  }
+
+  .title {
+    font-size: 1.1rem;
+  }
+
+  .content {
+    font-size: 0.95rem;
+  }
+
+  .content :global(p:first-child) {
+    margin-top: 0;
+  }
+
+  .content :global(p:last-child) {
+    margin-bottom: 0;
+  }
+</style>
