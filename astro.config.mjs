@@ -9,12 +9,6 @@ export default defineConfig({
     starlight({
       title: 'EDB Guides',
       description: 'Vejledninger til IT-værktøjer i skolen',
-      defaultLocale: 'da',
-      locales: {
-        da: {
-          label: 'Dansk'
-        }
-      },
       social: {
         github: 'https://github.com/edbpede/guides-new',
       },
