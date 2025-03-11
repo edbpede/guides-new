@@ -16,7 +16,8 @@ export default defineConfig({
         {
           label: 'Velkommen',
           items: [
-            { label: 'Introduktion', link: '/' }
+            { label: 'Introduktion', link: '/' },
+            { label: 'Guide Oversigt', link: '/guides/' }
           ]
         },
         {
